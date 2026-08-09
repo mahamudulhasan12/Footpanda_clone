@@ -26,7 +26,13 @@ class ContinueButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      overlayColor: WidgetStateProperty.all(
+        Colors.blue.withOpacity(0.2),
+      ),
+      // mouseCursor: MouseCursor.uncontrolled,
+      // autofocus: true,
+
+      onTap: onTab,
       child: AppContinner(
         pading: EdgeInsets.all(5),
         colors: backround ?? AppColors.sColors,

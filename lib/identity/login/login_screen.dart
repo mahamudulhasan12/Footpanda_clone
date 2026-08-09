@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:foodpanda/custom%20widget/app_continner.dart';
 import 'package:foodpanda/custom%20widget/app_text.dart';
+import 'package:foodpanda/identity/login/Email/email_verify_screeen.dart';
+import 'package:foodpanda/identity/login/continue%20email/your_email_screen.dart';
 import 'package:foodpanda/identity/login/widget/continue_button.dart';
 import 'package:foodpanda/util/app_colors.dart';
 
@@ -14,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool isActive = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,11 +108,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 10),
                 ContinueButton(
-                  onTab: () {},
+                  onTab: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EmailVerifyScreeen()));
+                    setState(() {
+                      isActive !=isActive;
+                    });
+                  },
                   imageLink:
                       "https://cdn-icons-png.flaticon.com/128/300/300221.png",
-                  text: 'Countinue wiht google',
-                  backround: Colors.white,
+                  text: 'Countinue with google',
+                  backround: isActive ? AppColors.pColros : Colors.white,
                 ),
                 SizedBox(height: 10),
                 ContinueButton(
@@ -131,7 +139,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 10),
                 ContinueButton(
-                  onTab: () {},
+                  onTab: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>YourEmailScreen()));
+                  },
                   imageLink:
                       "https://cdn-icons-png.flaticon.com/128/646/646094.png",
                   text: "Continue with email",
@@ -143,7 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 15,),
                 GestureDetector(
                   onTap: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EmailVerifyScreeen()));
                   },
                   child: Row(
                     spacing: 5,
