@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foodpanda/identity/location/location_screen.dart';
 import 'package:foodpanda/identity/login/login_screen.dart';
+import 'package:foodpanda/view/home/home_screen.dart';
 
-import 'package:foodpanda/spalish_screen/spalish_screen.dart';
+
 
 void main(){
   runApp(const MyApp());
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }
