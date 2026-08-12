@@ -6,9 +6,13 @@ import 'package:foodpanda/identity/login/login_screen.dart';
 import 'package:foodpanda/local%20database/offer_data/OfferData.dart';
 import 'package:foodpanda/util/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:foodpanda/view/Card%20Screen/card_screen.dart';
+import 'package:foodpanda/view/Grocery%20Item/grocery_screen.dart';
+import 'package:foodpanda/view/Profile/profile_screen.dart';
 import 'package:foodpanda/view/home/widget/catogery_text.dart';
 import 'package:foodpanda/view/home/widget/food_card_design.dart';
 import 'package:foodpanda/view/home/widget/home_screen_appbar.dart';
+import 'package:foodpanda/view/search/search_screen.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +24,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController search = TextEditingController();
+
   int cPage = 0;
   List image = [
     {
@@ -244,37 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) {
-          setState(() {
-            HomeScreen();
-            LoginScreen();
-          });
-        },
-        backgroundColor: Colors.white,
-        selectedItemColor: AppColors.pColros,
-        unselectedItemColor: Colors.grey,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Food"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_grocery_store),
-            label: "Grocery",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search_outlined),
-            label: "Search",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.card_travel_sharp),
-            label: "Carts",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: "Accounts",
-          ),
-        ],
-      ),
+
     );
   }
 
@@ -294,7 +269,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
       ],
     );
+
   }
+
 }
 
 

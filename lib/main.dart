@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodpanda/identity/location/location_screen.dart';
 import 'package:foodpanda/identity/login/login_screen.dart';
+import 'package:foodpanda/view/NavigationBottonBar/navigation_botton_bar.dart';
 import 'package:foodpanda/view/home/home_screen.dart';
 
 
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: NavigationBottonBar(),
     );
   }
 }
