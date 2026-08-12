@@ -23,23 +23,23 @@ class Offerdata {
   ];
   static List food =[
     {
-      "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZJFi8pYVVwjRWr_f85Q7qTCxXQQUnb126Yw&s",
+      "image":"https://cdn-icons-png.flaticon.com/128/1404/1404945.png",
       "text":"Pizza"
     },
     {
-      "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcBlpPJMH6jZgmhCX6UXqeChwed0Sf7WYT-Q&s",
+      "image":"https://cdn-icons-png.flaticon.com/128/4781/4781223.png",
       "text":"Biryani"
     },
     {
-      "image":"https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/tk%2Fphoto%2F2025%2F06-2025%2F2025-06-burger-doneness-guide%2Fburger-doneness-guide-0195",
+      "image":"https://cdn-icons-png.flaticon.com/128/877/877951.png",
       "text":"Burgers"
     },
     {
-      "image":"https://static.vecteezy.com/system/resources/thumbnails/024/283/039/small/flat-style-colorful-award-badge-icon-vector.jpg",
+      "image":"https://cdn-icons-png.flaticon.com/128/3575/3575573.png",
       "text":"Fast Food"
     },
     {
-      "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1I9CvDB_A40JIL5-YjmKd8Ue8a0ggprvlrQ&s",
+      "image":"https://cdn-icons-png.flaticon.com/128/1046/1046751.png",
       "text":"Chicken"
     },
   ];

@@ -6,6 +6,7 @@ import 'package:foodpanda/identity/login/login_screen.dart';
 import 'package:foodpanda/local%20database/offer_data/OfferData.dart';
 import 'package:foodpanda/util/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:foodpanda/view/home/widget/home_screen_appbar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,51 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.pColros,
-      appBar: AppBar(
-        backgroundColor: AppColors.pColros,
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.location_on_outlined,
-            color: AppColors.sColors,
-            size: 30,
-          ),
-        ),
-        title: AppText(
-          text: "N580",
-          fontWeight: FontWeight.bold,
-          colors: AppColors.sColors,
-          fontSize: 18,
-        ),
-        centerTitle: false,
-        toolbarHeight: 60,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.favorite_border,
-              color: AppColors.sColors,
-              size: 30,
-            ),
-          ),
-        ],
-        bottom: PreferredSize(
-          preferredSize: Size(double.infinity, 50),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: AppTextField(
-              controller: search,
-              lText: AppText(text: "Search for restaurants", fontSize: 15),
-              isDense: true,
-              pIcons: Icon(Icons.search_rounded, size: 30),
-              borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide.none,
-              fillColor: AppColors.sColors,
-              filled: true,
-            ),
-          ),
-        ),
-      ),
+      appBar: HomeScreenAppBar(search: search),
       body: ListView(
         children: [
           CarouselSlider(
@@ -194,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   }),
                 ),
                 SizedBox(
-                  height: 100,
+                  height: 90,
                   child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
@@ -235,7 +192,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Icon(Icons.arrow_forward_ios_outlined,size: 20,),
                       ),
                     )
-
                   ],
                 ),
               ],
@@ -284,3 +240,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
