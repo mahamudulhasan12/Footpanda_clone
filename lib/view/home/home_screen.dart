@@ -3,7 +3,7 @@ import 'package:foodpanda/custom%20widget/app_continner.dart';
 import 'package:foodpanda/custom%20widget/app_text.dart';
 import 'package:foodpanda/custom%20widget/app_textfield.dart';
 import 'package:foodpanda/identity/login/login_screen.dart';
-import 'package:foodpanda/local%20database/offer_data/OfferData.dart';
+
 import 'package:foodpanda/util/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:foodpanda/view/Card%20Screen/card_screen.dart';
@@ -13,6 +13,8 @@ import 'package:foodpanda/view/home/widget/catogery_text.dart';
 import 'package:foodpanda/view/home/widget/food_card_design.dart';
 import 'package:foodpanda/view/home/widget/home_screen_appbar.dart';
 import 'package:foodpanda/view/search/search_screen.dart';
+
+import '../../Model/local database/offer_data/OfferData.dart';
 
 
 class HomeScreen extends StatefulWidget {
