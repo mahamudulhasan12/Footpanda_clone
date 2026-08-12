@@ -6,7 +6,10 @@ import 'package:foodpanda/identity/login/login_screen.dart';
 import 'package:foodpanda/local%20database/offer_data/OfferData.dart';
 import 'package:foodpanda/util/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:foodpanda/view/home/widget/catogery_text.dart';
+import 'package:foodpanda/view/home/widget/food_card_design.dart';
 import 'package:foodpanda/view/home/widget/home_screen_appbar.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -30,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   List data = Offerdata.offer;
-  List foods =Offerdata.food;
+  List foods = Offerdata.food;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,83 +119,125 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           AppContinner(
-            pading: EdgeInsets.only(left: 15, right: 15, top: 30),
+            pading: EdgeInsets.only(left: 10, right: 10, top: 30),
             width: MediaQuery.sizeOf(context).width,
-            height: 800,
-            borderRadius: BorderRadius.circular(20),
+            height: 4000,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
             colors: Colors.white,
             child: Column(
               children: [
                 SizedBox(
                   height: 100,
                   child: ListView.builder(
-
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: data.length,
-                      itemBuilder: (context , index){
-                    return AppContinner(
-                      height: 90,
-                      width: 90,
-                      borderRadius: BorderRadius.circular(10),
-                      child: Column(
-                        children: [
-                          Image.network(
-                            height: 50,
-                            width: 50,
-                            "${data[index]['image']}",
-                          ),
-                          AppText(text: "${data[index]['text']}",fontWeight: FontWeight.bold,overflow:TextOverflow.ellipsis,),SizedBox(height: 5,),
-                          Divider(thickness: 1,color: Colors.grey.shade300,),
-
-                        ],
-                      ),
-                    );
-                  }),
+                    itemBuilder: (context, index) {
+                      return AppContinner(
+                        height: 90,
+                        width: 90,
+                        borderRadius: BorderRadius.circular(10),
+                        child: Column(
+                          children: [
+                            Image.network(
+                              height: 50,
+                              width: 50,
+                              "${data[index]['image']}",
+                            ),
+                            AppText(
+                              text: "${data[index]['text']}",
+                              fontWeight: FontWeight.bold,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            SizedBox(height: 5),
+                            Divider(thickness: 1, color: Colors.grey.shade300),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
                 SizedBox(
                   height: 90,
                   child: ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      itemCount: foods.length,
-                      itemBuilder: (context , index){
-                        return AppContinner(
-                          height: 90,
-                          width: 90,
-                          borderRadius: BorderRadius.circular(10),
-                          child: Column(
-                            children: [
-                              Image.network(
-                                height: 50,
-                                width: 50,
-                                "${foods[index]['image']}",
-                              ),
-                              AppText(text: "${foods[index]['text']}",overflow:TextOverflow.ellipsis,),SizedBox(height: 5,),
-
-                            ],
-                          ),
-                        );
-                      }),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AppText(text: "Popular Restaurants",fontWeight: FontWeight.bold,colors: AppColors.tColors,fontSize: 17,),
-                    InkWell(
-                      onTap: (){},
-                      child: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          // color: Colors.blue,
-                          shape: BoxShape.circle,
-                          border: Border.all(width: 1,color: Colors.grey),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: foods.length,
+                    itemBuilder: (context, index) {
+                      return AppContinner(
+                        height: 90,
+                        width: 90,
+                        borderRadius: BorderRadius.circular(10),
+                        child: Column(
+                          children: [
+                            Image.network(
+                              height: 50,
+                              width: 50,
+                              "${foods[index]['image']}",
+                            ),
+                            AppText(
+                              text: "${foods[index]['text']}",
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            SizedBox(height: 5),
+                          ],
                         ),
-                        child: Icon(Icons.arrow_forward_ios_outlined,size: 20,),
-                      ),
-                    )
-                  ],
+                      );
+                    },
+                  ),
+                ),
+                CatogeryText(text: 'Popular Restaurants', onTab: () {},),
+                SizedBox(height: 10),
+                SizedBox(
+                  height: 272,
+                  child: ListView.builder(
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: FoodCardDesign(),
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(height: 10),
+                CatogeryText(text: 'First delivery', onTab: () {},),
+                SizedBox(height: 15),
+                SizedBox(
+                  height: 272,
+                  child: ListView.builder(
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: FoodCardDesign(),
+                      );
+                    },
+                  ),
+                ),
+                CatogeryText(text: 'Explore restaurants nearby', onTab: () {},icons: Icons.arrow_downward,),
+                SizedBox(height: 15,),
+
+                ListView.builder(
+                  physics: ScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: FoodCardDesign(),
+                    );
+                  },
                 ),
               ],
             ),
@@ -201,7 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             HomeScreen();
             LoginScreen();
@@ -211,12 +256,23 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedItemColor: AppColors.pColros,
         unselectedItemColor: Colors.grey,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Food"),
-          BottomNavigationBarItem(icon: Icon(Icons.local_grocery_store),label: "Grocery"),
-          BottomNavigationBarItem(icon: Icon(Icons.search_outlined),label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.card_travel_sharp),label: "Carts",),
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline),label: "Accounts"),
-
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Food"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_grocery_store),
+            label: "Grocery",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search_outlined),
+            label: "Search",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.card_travel_sharp),
+            label: "Carts",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: "Accounts",
+          ),
         ],
       ),
     );
@@ -240,5 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
 
 
