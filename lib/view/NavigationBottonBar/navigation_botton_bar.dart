@@ -45,7 +45,7 @@ class _NavigationBottonBarState extends State<NavigationBottonBar> {
             label: "Grocery",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.flatware,size: 30),
+            icon: Icon(Icons.search_outlined,size: 30),
             label: "Search",
           ),
           BottomNavigationBarItem(

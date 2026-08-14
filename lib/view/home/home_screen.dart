@@ -56,7 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: EdgeInsets.symmetric(),
                     child: Container(
                       padding: EdgeInsets.only(left: 10, right: 10, top: 10),
-
                       width: double.infinity,
                       decoration: BoxDecoration(
                         // borderRadius: BorderRadius.circular(5),
@@ -250,7 +249,25 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+      drawer:Drawer(
+        width: 275,
+        child:AppContinner(
+          width: MediaQuery.sizeOf(context).width,
+          borderRadius: BorderRadius.circular(5),
+          colors:AppColors.sColors,
+          child:Column(
+            children: [
+              AppContinner(
+                height: 200,
+                width: MediaQuery.sizeOf(context).width,
+                borderRadius: BorderRadius.circular(5),
+                colors: AppColors.pColros,
 
+              ),
+            ],
+          )
+        )
+      ),
     );
   }
 

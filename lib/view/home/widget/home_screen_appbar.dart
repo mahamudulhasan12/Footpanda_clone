@@ -7,24 +7,17 @@ import '../../../util/app_colors.dart';
 class HomeScreenAppBar extends StatelessWidget implements PreferredSize{
   const HomeScreenAppBar({
     super.key,
-    required this.search,
+    required this.search, this.leading,
   });
 
   final TextEditingController search;
-
+  final Widget ? leading;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.pColros,
 
-      leading: IconButton(
-        onPressed: () {},
-        icon: Icon(
-          Icons.location_on_outlined,
-          color: AppColors.sColors,
-          size: 30,
-        ),
-      ),
+      leading: leading,
       title: AppText(
         text: "N580",
         fontWeight: FontWeight.bold,
