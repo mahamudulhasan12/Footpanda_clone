@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
           AppContinner(
             pading: EdgeInsets.only(left: 10, right: 10, top: 30),
             width: MediaQuery.sizeOf(context).width,
-            height: 4000,
+            height: 3770,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -233,7 +233,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 CatogeryText(text: 'Explore restaurants nearby', onTab: () {},icons: Icons.arrow_downward,),
                 SizedBox(height: 15,),
-
                 ListView.builder(
                   physics: ScrollPhysics(),
                   scrollDirection: Axis.vertical,

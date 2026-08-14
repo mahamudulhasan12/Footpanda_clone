@@ -1,13 +1,14 @@
-
 import 'package:flutter/material.dart';
+import 'package:foodpanda/custom%20widget/app_top_snackbar.dart';
 import '../../../custom widget/app_continner.dart';
 import '../../../custom widget/app_text.dart';
 import '../../../util/app_colors.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 
 class FoodCardDesign extends StatelessWidget {
-  const FoodCardDesign({
-    super.key,
-  });
+  const FoodCardDesign({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +30,23 @@ class FoodCardDesign extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                mainAxisAlignment:
-                MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   CircleAvatar(
                     radius: 18,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showTopSnackBar(
+                          Overlay.of(context),
+                           AppTopSnackBar(
+                            title: "Success",
+                            message: "View this product!",
+                            icon: Icons.check_circle,
+                          ),
+                        );
+
+                      },
                       icon: Icon(
                         Icons.favorite_border,
                         color: AppColors.tColors,
@@ -67,8 +77,7 @@ class FoodCardDesign extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  mainAxisAlignment:
-                  MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppText(
                       text: "Nana Biryani House",
@@ -78,11 +87,7 @@ class FoodCardDesign extends StatelessWidget {
                     Row(
                       spacing: 2,
                       children: [
-                        Icon(
-                          Icons.star,
-                          color: Colors.orange,
-                          size: 16,
-                        ),
+                        Icon(Icons.star, color: Colors.orange, size: 16),
                         AppText(
                           text: "4.2",
                           fontWeight: FontWeight.bold,
@@ -97,10 +102,7 @@ class FoodCardDesign extends StatelessWidget {
                     ),
                   ],
                 ),
-                AppText(
-                  text: "From 10 min .৳৳ Biryani",
-                  colors: Colors.grey,
-                ),
+                AppText(text: "From 10 min .৳৳ Biryani", colors: Colors.grey),
                 Row(
                   spacing: 5,
                   children: [
@@ -108,8 +110,7 @@ class FoodCardDesign extends StatelessWidget {
                     AppText(
                       text: "TK 22",
                       colors: Colors.grey,
-                      decoration:
-                      TextDecoration.lineThrough,
+                      decoration: TextDecoration.lineThrough,
                     ),
                     AppText(
                       text: "Free for first order",
