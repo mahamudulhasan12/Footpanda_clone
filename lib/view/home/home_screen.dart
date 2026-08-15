@@ -262,7 +262,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: MediaQuery.sizeOf(context).width,
                 borderRadius: BorderRadius.circular(5),
                 colors: AppColors.pColros,
-
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10,top: 30),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AppContinner(
+                        height: 60,
+                        width: 60,
+                        borderRadius: BorderRadius.circular(30),
+                        colors: Colors.white,
+                        image: DecorationImage(
+                          image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/024/183/525/small/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg"),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ],
           )
