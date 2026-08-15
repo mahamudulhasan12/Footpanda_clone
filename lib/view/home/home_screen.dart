@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:foodpanda/custom%20widget/app_continner.dart';
 import 'package:foodpanda/custom%20widget/app_text.dart';
@@ -15,7 +17,7 @@ import 'package:foodpanda/view/home/widget/home_screen_appbar.dart';
 import 'package:foodpanda/view/search/search_screen.dart';
 
 import '../../Model/local database/offer_data/OfferData.dart';
-
+import 'Drawer/widget/drawer_listtile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -195,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                CatogeryText(text: 'Popular Restaurants', onTab: () {},),
+                CatogeryText(text: 'Popular Restaurants', onTab: () {}),
                 SizedBox(height: 10),
                 SizedBox(
                   height: 272,
@@ -213,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 SizedBox(height: 10),
-                CatogeryText(text: 'First delivery', onTab: () {},),
+                CatogeryText(text: 'First delivery', onTab: () {}),
                 SizedBox(height: 15),
                 SizedBox(
                   height: 272,
@@ -230,8 +232,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                CatogeryText(text: 'Explore restaurants nearby', onTab: () {},icons: Icons.arrow_downward,),
-                SizedBox(height: 15,),
+                CatogeryText(
+                  text: 'Explore restaurants nearby',
+                  onTab: () {},
+                  icons: Icons.arrow_downward,
+                ),
+                SizedBox(height: 15),
                 ListView.builder(
                   physics: ScrollPhysics(),
                   scrollDirection: Axis.vertical,
@@ -249,13 +255,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      drawer:Drawer(
+      drawer: Drawer(
         width: 275,
-        child:AppContinner(
+        child: AppContinner(
           width: MediaQuery.sizeOf(context).width,
           borderRadius: BorderRadius.circular(5),
-          colors:AppColors.sColors,
-          child:Column(
+          colors: AppColors.sColors,
+          child: Column(
             children: [
               AppContinner(
                 height: 200,
@@ -263,27 +269,98 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(5),
                 colors: AppColors.pColros,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 10,top: 30),
+                  padding: const EdgeInsets.only(left: 10, top: 55),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AppContinner(
-                        height: 60,
-                        width: 60,
-                        borderRadius: BorderRadius.circular(30),
-                        colors: Colors.white,
-                        image: DecorationImage(
-                          image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/024/183/525/small/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg"),
-                        ),
-                      )
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AppContinner(
+                            height: 60,
+                            width: 60,
+                            borderRadius: BorderRadius.circular(30),
+                            colors: Colors.white,
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                "https://static.vecteezy.com/system/resources/thumbnails/024/183/525/small/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg",
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.edit),
+                            color: AppColors.tColors,
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      AppText(
+                        text: "Gest User",
+                        fontWeight: FontWeight.bold,
+                        colors: AppColors.sColors,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      AppText(
+                        text: "user@gamil.com",
+                        colors: AppColors.sColors,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ],
                   ),
                 ),
               ),
+              DarwerListTile(
+                icons: Icons.local_offer_outlined,
+                iText: 'Valuchers & Offers',
+                onTab: () {},
+              ),
+              DarwerListTile(
+                icons: Icons.favorite_border,
+                iText: 'Favorites',
+                onTab: () {},
+              ),
+              DarwerListTile(
+                icons: Icons.bookmark_border_rounded,
+                iText: 'Orders & recording',
+                onTab: () {},
+              ),
+              DarwerListTile(
+                icons: Icons.location_on_outlined,
+                iText: 'Address',
+                onTab: () {},
+              ),
+              DarwerListTile(
+                icons: Icons.payment,
+                iText: 'Payment methods',
+                onTab: () {},
+              ),
+              DarwerListTile(
+                icons: Icons.help_center_outlined,
+                iText: 'Help center',
+                onTab: () {},
+              ),
+              DarwerListTile(
+                icons: Icons.card_giftcard,
+                iText: 'Invite friends',
+                onTab: () {
+
+                },
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey.shade300,
+              ),
+              ListTile(
+                leading: TextButton(onPressed: (){}, child: AppText(text: "Settings",fontWeight: FontWeight.bold,colors: AppColors.tColors,)),
+              ),
+              ListTile(
+                leading: AppText(text: "Temes & condition privacy",fontSize: 10,),
+              )
             ],
-          )
-        )
+          ),
+        ),
       ),
     );
   }
@@ -304,11 +381,5 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
       ],
     );
-
   }
-
 }
-
-
-
-
