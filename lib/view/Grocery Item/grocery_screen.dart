@@ -15,6 +15,12 @@ class _GroceryScreenState extends State<GroceryScreen> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar:HomeScreenAppBar(search: grocery) ,
+      body: ListView(
+        padding: EdgeInsets.only(left: 15,right: 15,top: 100),
+        children: [
+
+        ],
+      ),
     );
   }
 }

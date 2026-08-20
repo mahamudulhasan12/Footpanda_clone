@@ -6,16 +6,17 @@ class AppTextField extends StatelessWidget {
   const AppTextField({
     super.key,
     required this.controller,
-    required this.lText,
+    this.lText,
     this.isDense,
     this.borderRadius,
     this.borderSide,
-    this.inputType, this.sIcons, this.pIcons, this.onTab, this.obscureText, this.fillColor, this.filled,
+    this.inputType, this.sIcons, this.pIcons, this.onTab, this.obscureText, this.fillColor, this.filled, this.hindText, this.hTStyle,
 
   });
 
   final TextEditingController controller;
-  final Widget lText;
+  final String ? hindText;
+  final Widget ?lText;
   final bool? isDense;
   final BorderRadius? borderRadius;
   final BorderSide? borderSide;
@@ -26,10 +27,10 @@ class AppTextField extends StatelessWidget {
   final bool ? obscureText;
   final Color ? fillColor;
   final bool ? filled;
+  final TextStyle ? hTStyle;
   @override
   Widget build(BuildContext context) {
     return TextField(
-
       obscureText: obscureText ?? true,
       onTap: onTab,
       controller: controller,
@@ -38,6 +39,7 @@ class AppTextField extends StatelessWidget {
       decoration: InputDecoration(
         isDense: isDense,
         label: lText,
+        hintStyle: hTStyle,
         suffixIcon: sIcons,
         prefixIcon: pIcons,
         fillColor: fillColor,

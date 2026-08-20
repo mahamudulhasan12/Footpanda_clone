@@ -18,11 +18,17 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSize{
       backgroundColor: AppColors.pColros,
 
       leading: leading,
-      title: AppText(
-        text: "N580",
-        fontWeight: FontWeight.bold,
-        colors: AppColors.sColors,
-        fontSize: 18,
+      title: Row(
+        spacing: 5,
+        children: [
+          Icon(Icons.location_on_outlined,color: AppColors.sColors),
+          AppText(
+            text: "N580",
+            fontWeight: FontWeight.bold,
+            colors: AppColors.sColors,
+            fontSize: 18,
+          ),
+        ],
       ),
       centerTitle: false,
       // toolbarHeight: 80,
@@ -42,7 +48,11 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSize{
           padding: const EdgeInsets.all(12.0),
           child: AppTextField(
             controller: search,
-            lText: AppText(text: "Search for restaurants", fontSize: 15),
+            lText: AppText(text: "Search"),
+            hTStyle: TextStyle(
+              fontSize: 15,
+              color: Colors.blue
+            ),
             isDense: true,
             pIcons: Icon(Icons.search_rounded, size: 30),
             borderRadius: BorderRadius.circular(25),
@@ -58,7 +68,6 @@ class HomeScreenAppBar extends StatelessWidget implements PreferredSize{
   Size get preferredSize => Size.fromHeight(kToolbarHeight + 50);
 
   @override
-  // TODO: implement child
   Widget get child => throw UnimplementedError();
 
 }
