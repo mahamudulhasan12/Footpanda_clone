@@ -18,7 +18,7 @@ class _SearchScreenState extends State<SearchScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: AppTextField(controller: search,pIcons: Icon(Icons.search_rounded,size: 30q,),hindText:"Search for food",isDense: true,fillColor: Colors.white,),
+          child: AppTextField(controller: search,pIcons: Icon(Icons.search_rounded,size: 30,),hindText:"Search for food",isDense: true,fillColor: Colors.white,),
         ),
 
       ),
