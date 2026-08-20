@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodpanda/Model/p_model.dart';
 import 'package:foodpanda/custom%20widget/app_top_snackbar.dart';
 import '../../../custom widget/app_continner.dart';
 import '../../../custom widget/app_text.dart';
@@ -7,8 +8,8 @@ import 'package:top_snackbar_flutter/top_snack_bar.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 
 class FoodCardDesign extends StatelessWidget {
-  const FoodCardDesign({super.key});
-
+  const FoodCardDesign({super.key, required this.product, });
+  final PModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +81,7 @@ class FoodCardDesign extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppText(
-                      text: "Nana Biryani House",
+                      text: "${product.rName}",
                       fontWeight: FontWeight.bold,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -89,12 +90,12 @@ class FoodCardDesign extends StatelessWidget {
                       children: [
                         Icon(Icons.star, color: Colors.orange, size: 16),
                         AppText(
-                          text: "4.2",
+                          text: product.pRating,
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
                         ),
                         AppText(
-                          text: "(1k+)",
+                          text: "(${product.pSellCount}+)",
                           colors: Colors.grey,
                           fontSize: 13,
                         ),
@@ -102,13 +103,13 @@ class FoodCardDesign extends StatelessWidget {
                     ),
                   ],
                 ),
-                AppText(text: "From 10 min .৳৳ Biryani", colors: Colors.grey),
+                AppText(text: "From ${product.pTime} min .৳৳ ${product.pName}", colors: Colors.grey),
                 Row(
                   spacing: 5,
                   children: [
                     Icon(Icons.delivery_dining),
                     AppText(
-                      text: "TK 22",
+                      text: "TK ${product.pDiscount}",
                       colors: Colors.grey,
                       decoration: TextDecoration.lineThrough,
                     ),
@@ -140,7 +141,7 @@ class FoodCardDesign extends StatelessWidget {
                         colors: AppColors.pColros,
                       ),
                       AppText(
-                        text: "25%",
+                        text: "${product.pSave}%",
                         fontWeight: FontWeight.bold,
                         colors: AppColors.pColros,
                       ),

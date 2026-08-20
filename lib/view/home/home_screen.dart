@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:foodpanda/Model/p_model.dart';
+import 'package:foodpanda/Model/product_data/p_data.dart';
 import 'package:foodpanda/custom%20widget/app_continner.dart';
 import 'package:foodpanda/custom%20widget/app_text.dart';
 import 'package:foodpanda/custom%20widget/app_textfield.dart';
@@ -43,6 +45,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List data = Offerdata.offer;
   List foods = Offerdata.food;
+
+  List<PModel> Data=[];
+
+  getProduct()async{
+    Data.clear();
+    var a = pData().data;
+    Data.addAll(a);
+    log("========${Data.length}=====");
+  }
+
+  @override
+  void initState() {
+    getProduct();
+    log("sdfjjfsdlfjsdl");
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,11 +223,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     physics: ScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
-                    itemCount: 10,
+                    itemCount: Data.length,
                     itemBuilder: (context, index) {
+                      final Product = Data[index];
                       return Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: FoodCardDesign(),
+                        child: FoodCardDesign(product: Product,),
                       );
                     },
                   ),
@@ -225,9 +244,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     shrinkWrap: true,
                     itemCount: 10,
                     itemBuilder: (context, index) {
+                      final Product = Data[index];
                       return Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: FoodCardDesign(),
+                        child: FoodCardDesign(product: Product,),
                       );
                     },
                   ),
@@ -244,9 +264,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   shrinkWrap: true,
                   itemCount: 10,
                   itemBuilder: (context, index) {
+                    final Product = Data[index];
                     return Padding(
                       padding: EdgeInsets.symmetric(vertical: 10),
-                      child: FoodCardDesign(),
+                      child: FoodCardDesign(product: Product,),
                     );
                   },
                 ),
