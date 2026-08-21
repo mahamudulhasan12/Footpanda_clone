@@ -21,11 +21,17 @@ class _NavigationBottonBarState extends State<NavigationBottonBar> {
       _currentInde =index;
     });
   }
-  List<Widget> page =[
+  List<Widget> get page => [
     HomeScreen(),
     GroceryScreen(),
     SearchScreen(),
-    CardScreen(),
+    CardScreen(
+      onBrowser: (){
+        setState(() {
+          _currentInde = 0;
+        });
+      }
+    ),
     ProfileScreen(),
   ];
   @override
