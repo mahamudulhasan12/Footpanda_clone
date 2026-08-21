@@ -5,6 +5,7 @@ import 'package:foodpanda/custom%20widget/app_continner.dart';
 import 'package:foodpanda/custom%20widget/app_text.dart';
 import 'package:foodpanda/identity/login/Email/email_verify_screeen.dart';
 import 'package:foodpanda/identity/login/continue%20email/your_email_screen.dart';
+import 'package:foodpanda/identity/login/continue%20phone/phone_verified_screen.dart';
 import 'package:foodpanda/identity/login/widget/continue_button.dart';
 import 'package:foodpanda/util/app_colors.dart';
 
@@ -153,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 15,),
                 GestureDetector(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>EmailVerifyScreeen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PhoneVerifiedScreen()));
                   },
                   child: Row(
                     spacing: 5,

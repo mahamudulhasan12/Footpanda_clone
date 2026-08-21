@@ -5,6 +5,9 @@ import 'package:foodpanda/custom%20widget/app_button.dart';
 import 'package:foodpanda/custom%20widget/app_text.dart';
 import 'package:foodpanda/custom%20widget/app_textfield.dart';
 import 'package:foodpanda/util/app_colors.dart';
+import 'package:foodpanda/view/home/home_screen.dart';
+
+import '../../../view/NavigationBottonBar/navigation_botton_bar.dart';
 
 class ProfileSetScreen extends StatefulWidget {
   const ProfileSetScreen({super.key});
@@ -88,7 +91,7 @@ class _ProfileSetScreenState extends State<ProfileSetScreen> {
           ),
           SizedBox(height: 350),
           AppButton(onPressed: () {
-
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>NavigationBottonBar()));
           }, bName: "Continue"),
         ],
       ),
