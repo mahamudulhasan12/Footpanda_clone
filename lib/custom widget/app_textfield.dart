@@ -10,24 +10,31 @@ class AppTextField extends StatelessWidget {
     this.isDense,
     this.borderRadius,
     this.borderSide,
-    this.inputType, this.sIcons, this.pIcons, this.onTab, this.obscureText, this.fillColor, this.filled, this.hindText, this.hTStyle,
-
+    this.inputType,
+    this.sIcons,
+    this.pIcons,
+    this.onTab,
+    this.obscureText,
+    this.fillColor,
+    this.filled,
+    this.hindText,
+    this.hTStyle,
   });
 
   final TextEditingController controller;
-  final String ? hindText;
-  final Widget ?lText;
+  final String? hindText;
+  final Widget? lText;
   final bool? isDense;
   final BorderRadius? borderRadius;
   final BorderSide? borderSide;
   final TextInputType? inputType;
-  final Widget ? sIcons;
-  final Widget ? pIcons;
-  final VoidCallback ? onTab;
-  final bool ? obscureText;
-  final Color ? fillColor;
-  final bool ? filled;
-  final TextStyle ? hTStyle;
+  final Widget? sIcons;
+  final Widget? pIcons;
+  final VoidCallback? onTab;
+  final bool? obscureText;
+  final Color? fillColor;
+  final bool? filled;
+  final TextStyle? hTStyle;
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -37,6 +44,7 @@ class AppTextField extends StatelessWidget {
       keyboardType: inputType,
       // autofocus: true,
       decoration: InputDecoration(
+        hintText: hindText,
         isDense: isDense,
         label: lText,
         hintStyle: hTStyle,
