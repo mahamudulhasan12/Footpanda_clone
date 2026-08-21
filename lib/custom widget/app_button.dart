@@ -11,7 +11,7 @@ class AppButton extends StatelessWidget {
     this.bTextC,
     this.bSize,
     this.bColors,
-    this.borderradius, this.maxSize,
+    this.borderradius, this.maxSize, this.borderSide,
 
   });
   final VoidCallback onPressed;
@@ -21,6 +21,7 @@ class AppButton extends StatelessWidget {
   final Color? bColors;
   final BorderRadiusGeometry? borderradius;
   final Size ? maxSize;
+  final BorderSide ? borderSide;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -32,6 +33,7 @@ class AppButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: borderradius ?? BorderRadius.circular(10),
         ),
+        side: borderSide,
         backgroundColor: bColors ?? AppColors.pColros,
         foregroundColor: Colors.grey,
         overlayColor: Colors.grey,

@@ -3,6 +3,7 @@ import 'package:foodpanda/identity/location/location_screen.dart';
 import 'package:foodpanda/identity/login/login_screen.dart';
 import 'package:foodpanda/view/NavigationBottonBar/navigation_botton_bar.dart';
 import 'package:foodpanda/view/home/home_screen.dart';
+import 'package:foodpanda/view/spalish_screen/spalish_screen.dart';
 
 
 
@@ -25,7 +26,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: NavigationBottonBar(),
+      home: SpalishScreen(),
     );
   }
 }

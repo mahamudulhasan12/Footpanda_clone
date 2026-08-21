@@ -16,7 +16,7 @@ class _SpalishScreenState extends State<SpalishScreen> {
     super.initState();
   }
   Future toNextScreen(BuildContext context)async{
-    Future.delayed(Duration(seconds: 5)).then((_){
+    Future.delayed(Duration(seconds: 1)).then((_){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
     });
   }
