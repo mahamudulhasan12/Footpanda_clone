@@ -20,6 +20,11 @@ class _GroceryScreenState extends State<GroceryScreen> {
       body: ListView(
         padding: EdgeInsets.only(left: 15,right: 15,top: 100),
         children: [
+          Image.network(
+            height: 130,
+              width: 70,
+              "https://images.deliveryhero.io/image/foodpanda/web-acquisition/fp/rlp-nc-banner-logo-mweb.webp"),
+          SizedBox(height: 50,),
           Center(child: AppText(text: "We're not in your area yet",fontSize: 26,fontWeight: FontWeight.bold,)),
           SizedBox(height: 15,),
           Center(child: AppText(text: "check back later or try entering a different location",fontSize: 14,colors: Colors.grey,)),
